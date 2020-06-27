@@ -1,0 +1,1222 @@
+<robot
+  name="ardop3">
+    <link name="odom" />
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.41454 0.49117 0.81833"
+        rpy="0 0 0" />
+      <mass
+        value="82.585" />
+      <inertia
+        ixx="3.8983"
+        ixy="0.029109"
+        ixz="0.0006329"
+        iyy="0.052412"
+        iyz="-0.087697"
+        izz="3.8519" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+      <joint
+    name="odom_joint"
+    type="fixed">
+    <parent
+      link="odom" />
+    <child
+      link="base_link" />
+  </joint>
+
+  
+  <link
+    name="tab_Link">
+    <inertial>
+      <origin
+        xyz="3.4719E-08 0.014469 0.0053272"
+        rpy="0 0 0" />
+      <mass
+        value="0.27518" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/tab_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/tab_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="tab_joint"
+    type="fixed">
+    <origin
+      xyz="0.40839 -0.90482 1.0827"
+      rpy="1.2278 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="tab_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_front_left_Link">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 0 0.020968"
+        rpy="0 0 0" />
+      <mass
+        value="0.32836" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_front_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_front_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.60454 -0.92284 0.13262"
+      rpy="1.5708 6.123E-17 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_left_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_front_right_Link">
+    <inertial>
+      <origin
+        xyz="0 0 -0.021032"
+        rpy="0 0 0" />
+      <mass
+        value="0.32836" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_front_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_front_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.18354 -0.92284 0.13262"
+      rpy="1.5708 -0.080947 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_right_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="wheel_back_left_Link">
+    <inertial>
+      <origin
+        xyz="0 0 0.020968"
+        rpy="0 0 0" />
+      <mass
+        value="0.32836" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_back_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_back_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_back_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.60454 -0.69284 0.13262"
+      rpy="1.5708 6.123E-17 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_back_left_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wheel_back_right_Link">
+    <inertial>
+      <origin
+        xyz="0 1.3878E-16 -0.021032"
+        rpy="0 0 0" />
+      <mass
+        value="0.32836" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_back_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wheel_back_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_back_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.18354 -0.69284 0.13262"
+      rpy="-1.5708 6.123E-17 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_back_right_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="neck_body_connector_Link">
+    <inertial>
+      <origin
+        xyz="-0.0040697 0.0056315 -0.011816"
+        rpy="0 0 0" />
+      <mass
+        value="0.046364" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/neck_body_connector_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/neck_body_connector_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_body_connector_joint"
+    type="continuous">
+    <origin
+      xyz="0.42327 -0.83378 1.1876"
+      rpy="-3.1416 -6.1133E-17 -1.6271" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck_body_connector_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="neck_head_connector_Link">
+    <inertial>
+      <origin
+        xyz="-0.012053 0.10794 -0.0062672"
+        rpy="0 0 0" />
+      <mass
+        value="0.82631" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/neck_head_connector_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/neck_head_connector_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_head_connector_joint"
+    type="continuous">
+    <origin
+      xyz="0.0060459 0 -0.015"
+      rpy="-1.5556 2.3333E-15 -1.5708" />
+    <parent
+      link="neck_body_connector_Link" />
+    <child
+      link="neck_head_connector_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="kinect_Link">
+    <inertial>
+      <origin
+        xyz="0 4.4409E-16 0.015"
+        rpy="0 0 0" />
+      <mass
+        value="0.1386" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/kinect_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/kinect_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="kinect_joint"
+    type="fixed">
+    <origin
+      xyz="-0.012068 0.10537 0.015436"
+      rpy="1.7347E-18 1.1081E-14 2.1684E-19" />
+    <parent
+      link="neck_head_connector_Link" />
+    <child
+      link="kinect_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shoulder_right_Link">
+    <inertial>
+      <origin
+        xyz="-0.054055 -0.0035027 -0.03567"
+        rpy="0 0 0" />
+      <mass
+        value="0.38237" />
+      <inertia
+         ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/shoulder_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/shoulder_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.18926 -0.83378 1.1036"
+      rpy="0.029291 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_right_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="bicep_right_Link">
+    <inertial>
+      <origin
+        xyz="0.048238 -0.13163 -0.0040227"
+        rpy="0 0 0" />
+      <mass
+        value="0.43786" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/bicep_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/bicep_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bicep_right_joint"
+    type="continuous">
+    <origin
+      xyz="-0.05 0 0"
+      rpy="-2.6369 1.5708 -1.1356" />
+    <parent
+      link="shoulder_right_Link" />
+    <child
+      link="bicep_right_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="forearm_right_Link">
+    <inertial>
+      <origin
+        xyz="0.0012325 -0.085388 0.031906"
+        rpy="0 0 0" />
+      <mass
+        value="0.38487" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/forearm_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/forearm_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.011917 -0.21965 -0.0040232"
+      rpy="-1.5708 1.4544 -1.5708" />
+    <parent
+      link="bicep_right_Link" />
+    <child
+      link="forearm_right_Link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="wrist_right_Link">
+    <inertial>
+      <origin
+        xyz="0.024413 -0.0086014 0.0033587"
+        rpy="0 0 0" />
+      <mass
+        value="0.081001" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.00057367 -0.1794 0.021586"
+      rpy="-1.7316 5.3922E-15 -1.5708" />
+    <parent
+      link="forearm_right_Link" />
+    <child
+      link="wrist_right_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wrist2_right_Link">
+    <inertial>
+      <origin
+        xyz="0.028488 -0.0089035 0.0033302"
+        rpy="0 0 0" />
+      <mass
+        value="0.080909" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist2_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist2_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist2_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.024386 0.0016124 0.019748"
+      rpy="1.7471 -1.5708 -0.15866" />
+    <parent
+      link="wrist_right_Link" />
+    <child
+      link="wrist2_right_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wrist3_right_Link">
+    <inertial>
+      <origin
+        xyz="0.023195 0.046562 -0.00062623"
+        rpy="0 0 0" />
+      <mass
+        value="0.19239" />
+      <inertia
+         ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist3_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98824 0.73725 0.51765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist3_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist3_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.028461 -0.019105 0.024924"
+      rpy="2.3694 -1.5708 0.82586" />
+    <parent
+      link="wrist2_right_Link" />
+    <child
+      link="wrist3_right_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="end_effector_Link">
+    <inertial>
+      <origin
+        xyz="0.0080676 -0.013847 0.066609"
+        rpy="0 0 0" />
+      <mass
+        value="0.07271" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/end_effector_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/end_effector_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_effector_joint"
+    type="continuous">
+    <origin
+      xyz="0.043144 0.012563 0"
+      rpy="-1.5708 6.9944E-15 -0.14742" />
+    <parent
+      link="wrist3_right_Link" />
+    <child
+      link="end_effector_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="shoulder_left_Link">
+    <inertial>
+      <origin
+        xyz="-0.0034764 0.054056 -0.03567"
+        rpy="0 0 0" />
+      <mass
+        value="0.38237" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/shoulder_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/shoulder_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.60897 -0.83378 1.1041"
+      rpy="1.5708 2.1771E-14 -1.6033" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_left_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="bicep_left_Link">
+    <inertial>
+      <origin
+        xyz="0.048238 -0.12915 0.01578"
+        rpy="0 0 0" />
+      <mass
+        value="0.43786" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/bicep_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/bicep_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bicep_left_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.05 0"
+      rpy="0.12075 1.5708 0" />
+    <parent
+      link="shoulder_left_Link" />
+    <child
+      link="bicep_left_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="forearm_left_Link">
+    <inertial>
+      <origin
+        xyz="0.0012327 -0.085365 0.034419"
+        rpy="0 0 0" />
+      <mass
+        value="0.38478" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/forearm_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/forearm_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.0094281 -0.21717 0.015779"
+      rpy="-1.5708 1.45 -1.5708" />
+    <parent
+      link="bicep_left_Link" />
+    <child
+      link="forearm_left_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="wrist_left_Link">
+    <inertial>
+      <origin
+        xyz="0.022027 -0.0088023 0.0033302"
+        rpy="0 0 0" />
+      <mass
+        value="0.080909" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.00057367 -0.18179 0.044293"
+      rpy="1.5383 0 -1.5708" />
+    <parent
+      link="forearm_left_Link" />
+    <child
+      link="wrist_left_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="wrist2_left_Link">
+    <inertial>
+      <origin
+        xyz="0.022027 0.0089035 -9.135E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.080909" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist2_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist2_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist2_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.022 0.0011124 0.026208"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="wrist_left_Link" />
+    <child
+      link="wrist2_left_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wrist3_left_Link">
+    <inertial>
+      <origin
+        xyz="-0.04201 0.04312 0.00086125"
+        rpy="0 0 0" />
+      <mass
+        value="0.19239" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"/>
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist3_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.98824 0.73725 0.51765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/wrist3_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist3_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.022 0.019105 0.022792"
+      rpy="0.17992 1.5708 0" />
+    <parent
+      link="wrist2_left_Link" />
+    <child
+      link="wrist3_left_Link" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="end_effector_left_Link">
+    <inertial>
+      <origin
+        xyz="0.0080676 -0.015334 0.066609"
+        rpy="0 0 0" />
+      <mass
+        value="0.07271" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/end_effector_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ardop3/meshes/end_effector_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_effector_left_joint"
+    type="continuous">
+    <origin
+      xyz="-0.021641 0.0091211 0"
+      rpy="-1.5708 -3.4694E-18 -0.087597" />
+    <parent
+      link="wrist3_left_Link" />
+    <child
+      link="end_effector_left_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+</robot>

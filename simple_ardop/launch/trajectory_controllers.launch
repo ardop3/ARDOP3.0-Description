@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+	<include
+		file="$(find gazebo_ros)/launch/empty_world.launch" >
+		<arg name="verbose" value="true" />
+	</include>
+
+	<param 
+		name="robot_description" 
+		textfile="$(find simple_ardop)/urdf/simple_ardop.urdf" />
+
+	<node
+		name="spawn_model"
+		pkg="gazebo_ros"
+		type="spawn_model"
+		respawn="false"
+		args="-file $(find simple_ardop)/urdf/simple_ardop.urdf -urdf -model simple_ardop"
+		output="screen" />
+
+	<rosparam
+		file="$(find simple_ardop)/config/trajectory_controllers.yaml"
+		command="load" />
+
+	<node
+		name="controller_spawner"
+		pkg="controller_manager"
+		type="spawner"
+		respawn="false"
+		ns="/simple_ardop"
+		args="arm_controller gripper_controller chassis_controller joint_state_controller" />
+
+	<node
+		name="robot_state_publisher"
+		pkg="robot_state_publisher"
+		type="robot_state_publisher"
+		respawn="false"
+		output="screen">
+
+		<remap
+			from="/joint_states"
+			to="/simple_ardop/joint_states" />
+	</node>
+
+</launch>

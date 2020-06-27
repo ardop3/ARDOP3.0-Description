@@ -1,0 +1,1098 @@
+<robot
+  name="simple_ardop">
+  <link name="odom" />
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.23525 -0.35636 -0.16004"
+        rpy="0 0 0" />
+      <mass
+        value="62.913" />
+      <inertia
+        ixx="3.1177"
+        ixy="0.00059306"
+        ixz="0.0015251"
+        iyy="3.068"
+        iyz="0.014463"
+        izz="0.050374" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+    <joint
+    name="odom_joint"
+    type="fixed">
+    <parent
+      link="odom" />
+    <child
+      link="base_link" />
+  </joint>
+
+
+  <link
+    name="wheel_front_left_Link">
+    <inertial>
+      <origin
+        xyz="0.0075 -1.1546E-14 2.548E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.00" />  <!-- 0.01907-->
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_front_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_front_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.42534 -0.50619 -0.47879"
+      rpy="0.85877 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_left_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheel_front_right_Link">
+    <inertial>
+      <origin
+        xyz="0.0075 -1.7764E-15 3.8525E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.00" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_front_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_front_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_front_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.030335 -0.50619 -0.47879"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_front_right_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheel_back_left_Link">
+    <inertial>
+      <origin
+        xyz="0.0075 -8.0491E-15 3.8025E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.00" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_back_left_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_back_left_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_back_left_joint"
+    type="continuous">
+    <origin
+      xyz="0.42534 -0.19004 -0.47879"
+      rpy="1.6891 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_back_left_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheel_back_right_Link">
+    <inertial>
+      <origin
+        xyz="0.0075 -1.7764E-15 3.8525E-14"
+        rpy="0 0 0" />
+      <mass
+        value="2.00" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_back_right_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wheel_back_right_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_back_right_joint"
+    type="continuous">
+    <origin
+      xyz="0.030335 -0.19004 -0.47879"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_back_right_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="shoulder_Link">
+    <inertial>
+      <origin
+        xyz="0.008031 0.036032 0.043945"
+        rpy="0 0 0" />
+      <mass
+        value="0.20851" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/shoulder_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.098039 0.098039 0.098039 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/shoulder_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0058888 -0.36975 0.40275"
+      rpy="-1.0091E-17 6.0393E-17 1.4052" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_Link" />
+    <axis
+      xyz="0 0 1" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+  <link
+    name="bicep_Link">
+    <inertial>
+      <origin
+        xyz="0.034133 -0.09449 -0.013707"
+        rpy="0 0 0" />
+      <mass
+        value="0.5828" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"  />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/bicep_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/bicep_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bicep_joint"
+    type="continuous">
+    <origin
+      xyz="0.0026622 0.055751 0.04"
+      rpy="1.5837 -4.5667E-16 1.5708" />
+    <parent
+      link="shoulder_Link" />
+    <child
+      link="bicep_Link" />
+    <axis
+      xyz="-1 0 0" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+  <link
+    name="forearm_Link">
+    <inertial>
+      <origin
+        xyz="0.035227 -0.11565 -0.010858"
+        rpy="0 0 0" />
+      <mass
+        value="0.4986" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"  />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/forearm_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/forearm_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_joint"
+    type="continuous">
+    <origin
+      xyz="0.0094954 -0.20676 -0.00095309"
+      rpy="0.065442 2.7756E-17 -9.3241E-16" />
+    <parent
+      link="bicep_Link" />
+    <child
+      link="forearm_Link" />
+    <axis
+      xyz="-1 0 0" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+  <link
+    name="wrist_Link">
+    <inertial>
+      <origin
+        xyz="-0.00103 -0.0092846 0.025689"
+        rpy="0 0 0" />
+      <mass
+        value="0.10422" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"  />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wrist_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wrist_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="continuous">
+    <origin
+      xyz="0.046015 -0.227 0"
+      rpy="1.5708 -0.11078 1.5499E-15" />
+    <parent
+      link="forearm_Link" />
+    <child
+      link="wrist_Link" />
+    <axis
+      xyz="-0.0086546 -0.077803 -0.99693" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+  <link
+    name="wrist2_Link">
+    <inertial>
+      <origin
+        xyz="0.01744 1.3289E-06 0.020602"
+        rpy="0 0 0" />
+      <mass
+        value="0.10052" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"  />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wrist2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wrist2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.045183 -0.0059131 0.039398"
+      rpy="-1.5489 0.0095341 -2.0545" />
+    <parent
+      link="wrist_Link" />
+    <child
+      link="wrist2_Link" />
+    <axis
+      xyz="0 0 -1" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+  <link
+    name="wrist3_Link">
+    <inertial>
+      <origin
+        xyz="0.055624 -0.086582 -0.0042256"
+        rpy="0 0 0" />
+      <mass
+        value="0.23397" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0"  />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wrist3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/wrist3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist3_joint"
+    type="continuous">
+    <origin
+      xyz="0.01492 0 0.024641"
+      rpy="-0.04401 1.3878E-15 -8.4655E-16" />
+    <parent
+      link="wrist2_Link" />
+    <child
+      link="wrist3_Link" />
+    <axis
+      xyz="1 0 0" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+  <link
+    name="end_effector_Link">
+    <inertial>
+      <origin
+        xyz="0.0082894 -0.061865 0.06505"
+        rpy="0 0 0" />
+      <mass
+        value="0.075365" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/end_effector_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://simple_ardop/meshes/end_effector_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_effector_joint"
+    type="continuous">
+    <origin
+      xyz="0.0077442 -0.068318 0.016305"
+      rpy="9.9928E-15 -1.4511 1.5708" />
+    <parent
+      link="wrist3_Link" />
+    <child
+      link="end_effector_Link" />
+    <axis
+      xyz="0 -1 0" />
+      		<limit
+			effort="300"
+			velocity="3"
+			lower="-0.45"
+			upper="1.10" />
+		<dynamics 
+			damping="50" 
+			friction="1" />
+  </joint>
+
+
+<!-- 
+
+  <link name="kinect_link">
+    <collision>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.2 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.2 0.05"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+
+    <inertial>
+      <mass value="0.1" />
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <box_inertia m="0.1 0.1 0.1 " />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+
+  <joint name="kinect_joint" type="fixed">
+    <axis xyz="0 0 1" />
+    <origin xyz=".2 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="kinect_link"/>
+  </joint>
+
+
+  <joint name="camera_optical_joint" type="fixed">
+    <axis xyz="0 0 0" />
+    <origin xyz=".2 0 0" rpy="0 0 0"/>
+    <parent link="kinect_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+<link name = " camera_link_optical">
+</link>
+
+
+
+
+<gazebo reference = "kinect_link" >
+<sensor type = "depth"  name ="camera_1">
+<always_on>1</always_on>
+<visualize>true</visualize>
+<camera>
+  <horizontal_fov>1.047</horizontal_fov>
+  <image>
+    <width>640</width>
+    <height>480</height>
+    <format>R8G8B8</format>
+  </image>
+
+  <depth_camera>
+  </depth_camera>
+
+  <clip>
+    <near>0.1</near>
+    <far>100</far>
+  </clip>
+
+
+</camera>
+
+<gazebo>
+<plugin name = "camera_controller" filename = "libgazebo_ros_openni_kinect.so">
+  <always_on>true</always_on>
+  <updateRate>10.0</updateRate>
+  <cameraName>kinect</cameraName>
+  <framename>camera_link_optical</framename>
+  <imageTopicName> rgb/image_raw</imageTopicName>
+  <depthImageTopicName> depth/image_raw</depthImageTopicName>
+  <pointCloudTopicName>depth/points</pointCloudTopicName>
+  <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+  <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+  <pointCloudCutoff>0.4</pointCloudCutoff>
+  <hackBaseline>0.07</hackBaseline>
+  <distortionK1>0</distortionK1>
+  <distortionK2>0</distortionK2>
+  <distortionK3>0</distortionK3>
+  <distortionT1>0</distortionT1>
+  <distortionT2>0</distortionT2>
+  <CxPrime>0</CxPrime>
+  <Cx>0</Cx>
+  <Cy>0</Cy>
+  <focalLength>0</focalLength>
+  <hackBaseline>0</hackBaseline>
+  </plugin>
+
+</gazebo>
+
+-->
+
+
+  <link name="kinect_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.2 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.2 0.05"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+
+    <inertial>
+      <mass value="0.1" />
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <box_inertia m="0.1 0.1 0.1 " />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+  </link>
+
+  <joint name="kinect_joint" type="fixed">
+    <axis xyz="1 1 1" />
+    <origin xyz=".2 0 0.9" rpy="2 3 6.28"/>
+    <parent link="base_link"/>
+    <child link="kinect_link"/>
+  </joint>
+
+
+
+
+
+  <gazebo 
+    reference="odom">
+  </gazebo>
+
+    <gazebo reference="shoulder_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="bicep_Link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="forearm_Link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="wrist_Link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="wrist2_Link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="wrist3_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+    <gazebo reference="end_effector_link">
+      <selfCollide>true</selfCollide>
+    </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/White</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <gazebo reference="wheel_front_left_Link">
+    <!--fdir1 value="1 0 0"/-->
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wheel_front_right_Link">
+    <!--fdir1 value="1 0 0"/-->
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wheel_back_left_Link">
+    <!--fdir1 value="1 0 0"/-->
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wheel_back_right_Link">
+    <!--fdir1 value="1 0 0"/-->
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="shoulder_Link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="bicep_Link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="forearm_link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wrist_link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wrist2_link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo reference="wrist3_link">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <gazebo reference="end_effector_link">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/simple_ardop</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="differential_drive_controller_1" filename="libgazebo_ros_diff_drive.so">
+      <legacyMode>false</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10</updateRate>
+      <leftJoint>wheel_front_left_joint</leftJoint>
+      <rightJoint>wheel_front_right_joint</rightJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
+      <wheelAcceleration>0</wheelAcceleration>
+      <torque>10</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+   <gazebo>
+    <plugin name="differential_drive_controller_2" filename="libgazebo_ros_diff_drive.so">
+      <legacyMode>false</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10</updateRate>
+      <leftJoint>wheel_back_left_joint</leftJoint>
+      <rightJoint>wheel_back_right_joint</rightJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
+      <wheelAcceleration>0</wheelAcceleration>
+      <torque>10</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+
+
+<gazebo reference = "kinect_link">
+  <sensor type = "depth" name ="kinect_link">
+
+    <camera>
+  <horizontal_fov>1.047</horizontal_fov>
+  <image>
+    <width>640</width>
+    <height>480</height>
+    <format>R8G8B8</format>
+  </image>
+
+  <depth_camera>
+  </depth_camera>
+
+  <clip>
+    <near>0.1</near>
+    <far>100</far>
+  </clip>
+
+
+</camera>
+
+  <plugin name="kinect_link_controller" filename="libgazebo_ros_openni_kinect.so">
+    <baseline>0.2</baseline>
+    <alwaysOn>true</alwaysOn>
+    <visualize>true</visualize>
+    <updateRate>1.0</updateRate>
+    <cameraName>kinect</cameraName>
+    <imageTopicName>/kinect/depth/image_raw</imageTopicName>
+    <cameraInfoTopicName>/kinect/depth/camera_info</cameraInfoTopicName>
+    <depthImageTopicName>/kinect/depth/image_raw</depthImageTopicName>
+    <depthImageInfoTopicName>/kinect/depth/camera_info</depthImageInfoTopicName>
+    <pointCloudTopicName>/kinect/depth/points</pointCloudTopicName>
+    <frameName>kinect_link</frameName>  <!-- kinect_data -->
+    <pointCloudCutoff>0.5</pointCloudCutoff>
+    <distortionK1>0.0000000</distortionK1>
+    <distortionK2>0.0000000</distortionK2>
+    <distortionK3>0.0000000</distortionK3>
+    <distortionT1>0.0000000</distortionT1>
+    <distortionT2>0.0000000</distortionT2>
+    <CxPrime>0</CxPrime>
+    <Cx>0</Cx>
+    <Cy>0</Cy>
+    <focalLength>0</focalLength>
+    <hackBaseline>0</hackBaseline>
+  </plugin>
+</sensor>
+</gazebo>
+
+
+
+  <transmission name="shoulder_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="shoulder_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="shoulder_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="bicep_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bicep_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bicep_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="forearm_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="forearm_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="forearm_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wrist_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wrist_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wrist2_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist2_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wrist2_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wrist3_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wrist3_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wrist3_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="end_effector_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="end_effector_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="end_effector_servo">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+</robot>
